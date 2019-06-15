@@ -26,6 +26,7 @@ Route::namespace('Api')->group(function (){
     Route::get('/players', 'PlayerController@list');
     Route::get('/player/{player}', 'PlayerController@single');
 
+    Route::get('search/{keyword}','SearchController@search');
     Route::middleware('auth:api')->group(function (){
         Route::post('team/update/{team}', 'TeamController@update')->middleware('isAdmin');
         Route::post('player/update/{player}', 'PlayerController@update')->middleware('isAdmin');
